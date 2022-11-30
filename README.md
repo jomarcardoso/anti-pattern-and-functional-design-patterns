@@ -4,11 +4,40 @@ O Anti Pattern surgiu primeiro com o código espaguete.
 
 É um erro comum querer aplicar todos os Padrões de Projeto que aprendeu, sem haver uma necessidade.
 
-Um pattern serve para resolver um problema, se não existe um problema não precisa de um padrão.
+*"Várias vezes foi alegado que o uso de Design Patterns, são na verdade indicadores de que o linguagem utilizada que está sendo usada não é poderosa o suficiente."*
 
-https://youtu.be/srQt1NAHYC0?t=198
+Um pattern serve para resolver um problema que a linguagem de programação por si não consegue resolver, se não existe um problema não precisa de um padrão.
+
+*"Quando vejo padrões em meus programas, eu considero eles um sinal de problema. O código do programa deveria refletir soment o problema que está sendo resolvido."
+
+Paul Graham
+
+Peter Norvig afirma que 16 dos 23 padrões de projetos que ele conhecia não eram necessários na linguagem Lisp. Um exemplo é o padrão [Pimpl idiom](https://wiki.c2.com/?PimplIdiom) usado na linguagem C++ (provavelmente) que serve para tornar valores privados. Padrões de projetos por vezes são gambiarras para suprir a ausência de uma feature da linguage. Por exemplo, esse padrão Pimpl Idiom não precisaria existir em Java, pois Java já possui atributos e métodos privados.
+
+As linguagens de programação que evoluem, como o JavaScript, podem preencher essas necessidades e evitar as dores de cabeça do uso de padrões. Abaixo alguns padrões que não são mais usado em JavaScript.
+
+```ts
+// module
+(function() {
+  
+}());
+
+// class
+function Person(name = '') {
+  this.name = name;
+}
+Person.prototype.sayTheName = function() {
+  console.log(this.name)
+}
+
+var jomar = new Person('Jomar')
+jomar.sayTheName()
+// 'Jomar'
+```
 
 ## Princípios da Programação Funcional
+
+https://youtu.be/srQt1NAHYC0?t=198
 
 ### Funções como coisas
 
@@ -67,3 +96,7 @@ Evita repetição de código.
 ## Referências
 
 - [wiki.c2](http://wiki.c2.com/?AntiPattern)
+- [Norvig](https://norvig.com/design-patterns/ppframe.htm)
+- [wiki.c2 - Are Design Patterns Missing Language Features](https://wiki.c2.com/?AreDesignPatternsMissingLanguageFeatures)
+- [Paul Graham](http://www.paulgraham.com/icad.html)
+- [wiki.c2 - Design Patterns in Dynamic Programming](https://wiki.c2.com/?DesignPatternsInDynamicProgramming)
