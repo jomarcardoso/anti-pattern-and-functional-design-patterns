@@ -8,11 +8,47 @@ Um pattern serve para resolver um problema, se não existe um problema não prec
 
 https://youtu.be/srQt1NAHYC0?t=198
 
-## Padrões de projeto
+## Princípios da Programação Funcional
 
-### Monadas
+### Funções como coisas
+
+Funções transformam coisas.
 
 ### Composição
+
+Encapsular várias funções em uma.
+
+Serviços são composições.
+
+### Tipos não são classes
+
+O tipo é a entrada e a saída de uma função.
+
+Não há métodos para manipular aquele tipo.
+
+No paradigma Orientado a Objetos o pagamento é uma das possíveis implementações de `IPayment`:
+
+```ts
+interface IPayment {}
+
+class CreditCardPayment implements IPayment {}
+
+class CashPayment implements IPayment {}
+```
+
+No paradigma funcional faz mais uso de AND (and, &, \*) do OR (or, |, +). Uma interface é um o AND de todos atributos e os atributos podem ser de um valor ou outro, OR.
+
+```ts
+interface Payment {
+  amount: number;
+  currency: 'dolar' | 'real';
+  method: 'cash' | 'credit-card'
+}
+```
+
+## Padrões funcionais
+
+### Monadas
 
 ### Functors (não sei se é)
 
