@@ -46,6 +46,10 @@ interface Payment {
 }
 ```
 
+### Funções como parâmetros
+
+Evita repetição de código.
+
 ## Padrões funcionais
 
 ### Monadas
