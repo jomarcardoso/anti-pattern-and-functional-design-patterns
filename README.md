@@ -45,7 +45,7 @@ Funções transformam coisas.
 
 ### Composição
 
-Encapsular várias funções em uma.
+Encapsular várias funções em uma. Você não tem como saber o que aconteceu lá dentro.
 
 Serviços são composições.
 
@@ -80,6 +80,34 @@ interface Payment {
 Evita repetição de código.
 
 ## Padrões funcionais
+
+### Partial Application (Encapsulamento)
+
+Para fazer injeção de dependência, pode-se fazer uma composição salvando a "injeção".
+
+```ts
+function getCustomerFromConnectionDatabase(connection: Connection, customerId = 0): Customer {
+  return connection.query(`SELECT * FROM customer WHERE id = ${customerId}`;
+}
+
+function getCustomerFromDatabase(customerId = 0): Customer {
+  return getCustomerFromConnectionDatabase(myCoonection, customerid);
+}
+```
+
+### Continuations
+
+Não sei se é esse o nome, mas a ideia é mandar funções que serão executadas para tratamento de sucesso e erro.
+
+```ts
+function divide(numerador = 1, denominador = 1, success, fail) {
+  if (denominador === 0) {
+    fail();
+  }
+  
+  success(numerador / denominador);
+}
+```
 
 ### Monadas
 
