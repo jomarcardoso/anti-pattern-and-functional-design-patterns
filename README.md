@@ -1,4 +1,4 @@
-# Anti Pattern e Design Pattern para o paradigma Funcional
+# Anti Pattern e Design Pattern para o paradigma Funcional + React
 
 O Anti Pattern surgiu primeiro com o código espaguete.
 
