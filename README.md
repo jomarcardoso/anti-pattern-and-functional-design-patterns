@@ -121,6 +121,12 @@ function divide(numerador = 1, denominador = 1, success, fail) {
 
 #### Render Props
 
+## outros
+
+Funções puras
+
+Imutabilidade 
+
 ## Referências
 
 - [wiki.c2](http://wiki.c2.com/?AntiPattern)
